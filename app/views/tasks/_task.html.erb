@@ -1,0 +1,7 @@
+<tr data-id="<%= task.id%>">
+<td style="width: 15%"><%= task.title %></td>
+<td style="width: 70%"><%= task.description %></td>
+<td style="width: 15%;text-align: right"><%#= link_to 'Show', task, class: 'btn' %>
+<%= link_to ' ', edit_task_path(task, format: :js),remote: true, class: 'btn icon-edit' %>
+<%= link_to ' ', task, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn icon-remove' %>
+</td></tr>

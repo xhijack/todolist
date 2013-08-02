@@ -1,0 +1,7 @@
+<%- if @task.errors.empty? %>
+$("#myModal").modal("hide");
+$("#error_explanation").html("");
+$("tr[data-id=<%= @task.id %>]").replaceWith('<%= escape_javascript(render('task', task: @task)) %>')
+<%- else %>
+$("#error_explanation").html("<% @task.errors.full_messages.each do |msg| %> <li><%= msg %></li><%- end %>");
+<%- end %>

@@ -1,0 +1,31 @@
+<%= link_to "New Task",new_task_path(format: :js), class: 'btn btn-small btn-primary' %>
+<table class="table">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Action</th>
+  </tr>
+
+<%= render @tasks %>
+</table>
+
+<br />
+
+  <div class="modal fade" id="myModal" style="float: bottom">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h3 class="modal-title">Task</h4>
+        </div>
+
+
+        <div class="modal-body">   
+        <div id="error_explanation"></div>
+        <div id="body">
+
+       <%= render "form" %>
+        </div></div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
